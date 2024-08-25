@@ -1,0 +1,85 @@
+﻿@model asp.netDay2.Models.Instructor
+@* <h1>Create new instructor</h1>
+<form asp-controller="instructor" asp-action="save" method="post">
+    <div class="form-group">
+        @Html.LabelFor(n => n.InsId) 
+        @Html.TextBoxFor(n => n.InsId)
+        @Html.ValidationMessageFor(n => n.InsId, "", new { @class = "text-danger" })        
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.InsName)
+        @Html.TextBoxFor(n => n.InsName)
+        @Html.ValidationMessageFor(n => n.InsName, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.InsDegree)
+        @Html.TextBoxFor(n => n.InsDegree)
+        @Html.ValidationMessageFor(n => n.InsDegree, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">        
+        @Html.LabelFor(n => n.Salary)
+        @Html.TextBoxFor(n => n.Salary)
+        @Html.ValidationMessageFor(n => n.Salary, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.DeptId)
+        @Html.TextBoxFor(n => n.DeptId)
+        @Html.ValidationMessageFor(n => n.DeptId, "", new { @class = "text-danger" })
+    </div>
+    <input type="submit" />
+</form> *@
+
+<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card rounded-3">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                         class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                         alt="Sample photo">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Create new instructor</h3>
+
+                        <form class="px-md-2" asp-controller="instructor" asp-action="save" method="post">
+
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                @Html.LabelFor(n => n.InsId, new { @class = "form-label" })
+                                @Html.TextBoxFor(n => n.InsId, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(n => n.InsId, "", new { @class = "text-danger" })
+                            </div>
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                @Html.LabelFor(n => n.InsName, new { @class = "form-label" })
+                                @Html.TextBoxFor(n => n.InsName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(n => n.InsName, "", new { @class = "text-danger" })
+                            </div>
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                @Html.LabelFor(n => n.InsDegree, new { @class = "form-label" })
+                                @Html.TextBoxFor(n => n.InsDegree, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(n => n.InsDegree, "", new { @class = "text-danger" })
+                            </div>
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                @Html.LabelFor(n => n.Salary, new { @class = "form-label" })
+                                @Html.TextBoxFor(n => n.Salary, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(n => n.Salary, "", new { @class = "text-danger" })
+                            </div>
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                @Html.LabelFor(n => n.DeptId, new { @class = "form-label" })
+                                @Html.TextBoxFor(n => n.DeptId, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(n => n.DeptId, "", new { @class = "text-danger" })
+                            </div>
+
+                            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg mb-1">Submit</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

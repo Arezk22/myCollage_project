@@ -1,0 +1,56 @@
+﻿@model asp.netDay2.Models.Student
+@{
+    var student = Model;
+}
+@* <h2>edit view</h2>
+<form asp-controller="student" asp-action="edit" method="post">
+    <input type="hidden" value="@student.StId" name="StId" />
+    first name: <input type="text" value="@student.StFname" name="StFname" />
+    last name: <input type="text" value="@student.StLname" name="StLname" />
+    address: <input type="text" value="@student.StAddress" name="StAddress" />
+    age: <input type="number" value="@student.StAge" name="StAge" />
+    <input type="submit" />
+</form> *@
+
+<h1>Edit</h1>
+<h4>student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="student" asp-action="edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StId" />
+            <div class="form-group">
+                <label asp-for="StFname" class="control-label"></label>
+                <input asp-for="StFname" class="form-control" />
+                <span asp-validation-for="StFname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StLname" class="control-label"></label>
+                <input asp-for="StLname" class="form-control" />
+                <span asp-validation-for="StLname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StAddress" class="control-label"></label>
+                <input asp-for="StAddress" class="form-control" />
+                <span asp-validation-for="StAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StAge" class="control-label"></label>
+                <input asp-for="StAge" class="form-control" />
+                <span asp-validation-for="StAge" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

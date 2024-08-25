@@ -1,0 +1,113 @@
+﻿@model ICollection<asp.netDay2.Models.Course>
+@* @{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_mylayout.cshtml";
+} *@
+
+
+
+
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-M3PWQaY2QFIhwuzE7VW3K1dyA0C1coQemlJD1qDzWIxmg4zFMEu50eU/HiPzGmG4" crossorigin="anonymous">
+</head>
+
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                crsID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                CrsDuration
+            </th>
+            <th>
+                TopId
+            </th>            
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var crs in Model)
+        {
+            <tr>
+                <td>
+                    @crs.CrsId
+                </td>
+                <td>
+                    @crs.CrsName
+                </td>
+                <td>
+                    @crs.CrsDuration
+                </td>
+                <td>
+                    @crs.TopId
+                </td> 
+                
+                <td>
+                    <form asp-controller="course" asp-action="details" asp-route-id="@crs.CrsId" method="post">
+                        <button  class="btn btn-info">details</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-controller="course" asp-action="edit" asp-route-id="@crs.CrsId" method="get">
+                        <button  class="btn btn-primary">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            data-course-id="@crs.CrsId">
+                        Delete
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Confirm Deletion</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete this course?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                    <form id="deleteForm" asp-controller="Course" asp-action="Delete" method="post">
+                                        <!-- Hidden field to hold the course ID -->
+                                        <input type="hidden" name="id" id="modalCourseId">
+                                        <button type="submit" class="btn btn-primary">Yes</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+
+                <script>
+                    // JavaScript to set the course ID in the modal form when the delete button is clicked
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var deleteButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
+                        deleteButtons.forEach(function (button) {
+                            button.addEventListener('click', function () {
+                                var courseId = this.getAttribute('data-course-id');
+                                document.getElementById('modalCourseId').value = courseId;
+                            });
+                        });
+                    });
+                </script>
+
+
+            </tr>                
+        }           
+    </tbody>   
+</table>  
+        <form action="/course/create" method="post">
+        <button class="btn btn-outline-primary btn-rounded" data-mdb-ripple-init data-mdb-ripple-color="dark">Create New Course</button>
+        </form>   
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgvVh5lB7Cji8gk54A1hohzTYfJr8Hd50Tvf6Ezri0fxYSl0pGr" crossorigin="anonymous"></script>

@@ -1,0 +1,43 @@
+﻿@model asp.netDay2.Models.User
+
+<form asp-action="create" method="post">
+    <div class="form-group">
+        @Html.LabelFor(n => n.Name)
+        @Html.TextBoxFor(n => n.Name)
+        @Html.ValidationMessageFor(n => n.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.Age)
+        @Html.TextBoxFor(n => n.Age)
+        @Html.ValidationMessageFor(n => n.Age, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.Email)
+        @Html.TextBoxFor(n => n.Email)
+        @Html.ValidationMessageFor(n => n.Email, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.Website)
+        @Html.TextBoxFor(n => n.Website)
+        @Html.ValidationMessageFor(n => n.Website, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.Password)
+        @Html.TextBoxFor(n => n.Password)
+        @Html.ValidationMessageFor(n => n.Password, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.ConfirmPassword)
+        @Html.TextBoxFor(n => n.ConfirmPassword)
+        @Html.ValidationMessageFor(n => n.ConfirmPassword, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.Phone)
+        @Html.TextBoxFor(n => n.Phone)
+        @Html.ValidationMessageFor(n => n.Phone, "", new { @class = "text-danger" })
+    </div>
+    <input type="submit" />
+</form>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

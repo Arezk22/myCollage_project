@@ -1,0 +1,51 @@
+﻿@model asp.netDay2.Models.Instructor
+@{
+    var instructor = Model;
+}
+
+@* <h2>Edit View</h2>
+<form asp-controller="instructor" asp-action="edit" method="post">
+    <input type="hidden" value="@instructor.InsId" name="InsId" />
+    name: <input type="text" value="@instructor.InsName" name="InsName" />
+    degree <input type="text" value="@instructor.InsDegree" name="InsDegree" />
+    salary <input type="number" value="@instructor.Salary" name="Salary" />
+    <input type="submit"/>
+</form> *@
+
+<h1>Edit</h1>
+<h4>Instructor</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="instructor" asp-action="edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="InsId" />
+            <div class="form-group">
+                <label asp-for="InsName" class="control-label"></label>
+                <input asp-for="InsName" class="form-control" />
+                <span asp-validation-for="InsName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InsDegree" class="control-label"></label>
+                <input asp-for="InsDegree" class="form-control" />
+                <span asp-validation-for="InsDegree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
