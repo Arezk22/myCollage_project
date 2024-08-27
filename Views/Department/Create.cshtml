@@ -1,63 +1,67 @@
 ﻿@model asp.netDay2.Models.Department
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Topic</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-image:url('https://wallpapercave.com/wp/wp6684577.jpg');
+   background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
 
-<section class="h-100 h-custom" style= "background-color: #8fc4b7 ; height : 50px">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-lg-8 col-xl-6">
-                <div class="card rounded-3">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
-                         class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
-                         alt="Sample photo">
-                    <div class="card-body p-4 p-md-5">
-                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Create new Department</h3>
-
+                <h3 class="text-center" style="color:azure;">Create new Department</h3>
+                <hr style="color:aliceblue" />
                         <form class="px-md-2" asp-controller="department" asp-action="save" method="post">
 
                             <div data-mdb-input-init class="form-outline mb-4">                               
-                                @Html.LabelFor(n => n.DeptId, new { @class = "form-label" })
+                                @Html.LabelFor(n => n.DeptId, new { @class = "form-label", style = "color: white;" })
                                 @Html.TextBoxFor(n => n.DeptId, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(n => n.DeptId, "", new { @class = "text-danger" })
                             </div>
                             <div data-mdb-input-init class="form-outline mb-4">
-                                @Html.LabelFor(n => n.DeptName, new { @class = "form-label" })
+                                @Html.LabelFor(n => n.DeptName, new { @class = "form-label", style = "color: white;" })
                                 @Html.TextBoxFor(n => n.DeptName, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(n => n.DeptName, "", new { @class = "text-danger" })
                             </div>
                             <div data-mdb-input-init class="form-outline mb-4">
-                                @Html.LabelFor(n => n.DeptDesc, new { @class = "form-label" })
+                                @Html.LabelFor(n => n.DeptDesc, new { @class = "form-label", style = "color: white;" })
                                 @Html.TextBoxFor(n => n.DeptDesc, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(n => n.DeptDesc, "", new { @class = "text-danger" })
                             </div>
                             <div data-mdb-input-init class="form-outline mb-4">
-                                @Html.LabelFor(n => n.DeptLocation, new { @class = "form-label" })
+                                @Html.LabelFor(n => n.DeptLocation, new { @class = "form-label", style = "color: white;" })
                                 @Html.TextBoxFor(n => n.DeptLocation, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(n => n.DeptLocation, "", new { @class = "text-danger" })
                             </div>
                             <div data-mdb-input-init class="form-outline mb-4">
-                                @Html.LabelFor(n => n.DeptManager, new { @class = "form-label" })
+                                @Html.LabelFor(n => n.DeptManager, new { @class = "form-label", style = "color: white;" })
                                 @Html.TextBoxFor(n => n.DeptManager, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(n => n.DeptManager, "", new { @class = "text-danger" })
                             </div>
                             <div data-mdb-input-init class="form-outline mb-4">
-                                @Html.LabelFor(n => n.ManagerHiredate, new { @class = "form-label" })
+                                @Html.LabelFor(n => n.ManagerHiredate, new { @class = "form-label", style = "color: white;" })
                                 @Html.TextBoxFor(n => n.ManagerHiredate, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(n => n.ManagerHiredate, "", new { @class = "text-danger" })
                             </div>
-                            
-                            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg mb-1">Submit</button>
-
-                        </form>
-
+                            <div class="form-group text-center mt-4">
+                        <input type="submit" value="Submit" class="btn btn-success" />
                     </div>
+                    
+                        </form>
+                <div class="text-center mt-3">
+                    <a asp-action="Index" style="color:azure;font-size:large ;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Back to List</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
-
-
 
 <script src="/lib/jquery/dist/jquery.min.js"></script>
 <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

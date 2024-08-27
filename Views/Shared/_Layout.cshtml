@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/asp.netDay2.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
    
         
 </head>
 <body>
     <header>
          
-        <nav style="background-color:wheat" class="navbar navbar-expand-lg navbar-light bg-body-tertiary">            
+        <nav style="background-color:black" class="navbar navbar-expand-lg navbar-light bg-body-tertiary">            
             <div class="container-fluid">               
                 <button data-mdb-collapse-init
                         class="navbar-toggler"
@@ -28,7 +30,7 @@
                      id="navbarCenteredExample">               
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a asp-controller="default" asp-action="Index" class="nav-link active" aria-current="page">Go To Home Page</a>
+                            <a asp-controller="default" asp-action="Index" class="nav-link active" aria-current="page"><p style="color:aliceblue">Go To Home Page</p></a>
                         </li>                                                                              
                     </ul>                   
                 </div>                
@@ -40,12 +42,53 @@
             @RenderBody()
         </main>
     </div>
+    
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    <div class="container my-5">
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - asp.netDay2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+        <footer class="bg-antiquewhite text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-2 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/profile.php?id=100025695173997&mibextid=ZbWKwL" role="button">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button">
+                        <i class="fab fa-google"></i>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/rezk_2960?igsh=MTZla3phZGlncTRvZQ==" role="button">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/ahmed-rezk-b7607a231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" role="button">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Arezk22" role="button">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->                       
+        </footer>
+
+    </div>
+    <!-- End of .container -->
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

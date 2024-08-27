@@ -6,23 +6,32 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-M3PWQaY2QFIhwuzE7VW3K1dyA0C1coQemlJD1qDzWIxmg4zFMEu50eU/HiPzGmG4" crossorigin="anonymous">
 </head>
-<table class="table table-striped">
+<table class="table table-striped" style="margin-top:20px">
     <thead>
-        <tr>
-            <th>
+        <tr style="background-color:black">
+            <th style="color:azure">
                 InsID
             </th>
-            <th>
+            <th style="color:azure">
                 Name
             </th>            
-            <th>
+            <th style="color:azure">
                 InsDegree
             </th>
-            <th>
+            <th style="color:azure">
                 Dep_Id
             </th>
-            <th>
+            <th style="color:azure">
                 Salary
+            </th>
+            <th style="color:azure">
+                Details
+            </th>
+            <th style="color:azure">
+                Edit
+            </th>
+            <th style="color:azure">
+                Delete
             </th>
         </tr>
 
@@ -48,7 +57,7 @@
                 </td>
                 <td>
                     <form asp-controller="instructor" asp-action="details" asp-route-id="@instructor.InsId" method="post">
-                        <button  class="btn btn-info">details</button>
+                        <button  class="btn btn-info">Details</button>
                     </form>
                 </td>
                 <td>

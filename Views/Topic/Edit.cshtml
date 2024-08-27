@@ -3,37 +3,48 @@
     var topic = Model;
 }
 
-@* <h2>Edit View</h2>
-<form asp-controller="topic" asp-action="edit" method="post">
-    <input type="hidden" value="@topic.TopId" name="TopId" />
-    name: <input type="text" value="@topic.TopName" name="TopName" />    
-    <input type="submit" />
-</form> *@
 
 
-<h1>Edit</h1>
-<h4>Topic</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-controller="topic" asp-action="edit" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="TopId" />
-            <div class="form-group">
-                <label asp-for="TopName" class="control-label"></label>
-                <input asp-for="TopName" class="form-control" />
-                <span asp-validation-for="TopName" class="text-danger"></span>
-            </div>            
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Topic</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-image:url('https://wallpapercave.com/wp/wp6684577.jpg');
+   background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <h1 class="text-center" style="color:azure;">Edit</h1>
+                <h4 class="text-center" style="color:azure;">Topic</h4>
+                <hr style="color:aliceblue" />
+                <form asp-controller="topic" asp-action="edit" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="TopId" />
+                    <div class="form-group">
+                        <label asp-for="TopName" class="control-label" style="color:azure; font-size:large; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></label>
+                        <input asp-for="TopName" class="form-control" />
+                        <span asp-validation-for="TopName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group text-center mt-4">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+                <div class="text-center mt-3">
+                    <a asp-action="Index" style="color:azure;font-size:large ;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Back to List</a>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
-</div>
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
 
-<script src="/lib/jquery/dist/jquery.min.js"></script>
-<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+

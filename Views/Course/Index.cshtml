@@ -11,21 +11,30 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-M3PWQaY2QFIhwuzE7VW3K1dyA0C1coQemlJD1qDzWIxmg4zFMEu50eU/HiPzGmG4" crossorigin="anonymous">
 </head>
 
-    <table class="table table-striped">
+<table class="table table-striped" style="margin-top:20px">
     <thead>
-        <tr>
-            <th>
+        <tr style="background-color:black">
+            <th style="color:azure">
                 crsID
             </th>
-            <th>
+            <th style="color:azure">
                 Name
             </th>
-            <th>
+            <th style="color:azure">
                 CrsDuration
             </th>
-            <th>
+            <th style="color:azure">
                 TopId
-            </th>            
+            </th> 
+            <th style="color:azure">
+                Details
+            </th>
+            <th style="color:azure">
+                Edit
+            </th>
+            <th style="color:azure">
+                Delete
+            </th>
         </tr>
 
     </thead>
@@ -48,7 +57,7 @@
                 
                 <td>
                     <form asp-controller="course" asp-action="details" asp-route-id="@crs.CrsId" method="post">
-                        <button  class="btn btn-info">details</button>
+                        <button  class="btn btn-info">Details</button>
                     </form>
                 </td>
                 <td>
